@@ -39,7 +39,6 @@ z_for_sale_resp = requests.request("GET", url, headers=headers, params=querystri
 
 # transform to json
 z_for_sale_resp_json = z_for_sale_resp.json()
-z_for_sale_resp_json['props']
 ## to DF
 df_z_for_sale = pd.DataFrame(z_for_sale_resp_json['props'][0]['dateSold'])
 # get zpids to a list
