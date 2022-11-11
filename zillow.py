@@ -3,7 +3,7 @@ import streamlit as st
 import requests
 import time
 import json
-import base64
+
 st.write('Welcome to the Zillow API Searcher')
 pd.set_option('display.max_columns', None)
 #Input parameters
@@ -41,7 +41,7 @@ z_for_sale_resp = requests.request("GET", url, headers=headers, params=querystri
 z_for_sale_resp_json = z_for_sale_resp.json()
 z_for_sale_resp_json['props']
 ## to DF
-df_z_for_sale = pd.json_normalize(data=z_for_sale_resp_json['props'])
+df_z_for_sale = pd.DataFrame(z_for_sale_resp_json['props'][0]['dateSold'])
 # get zpids to a list
 zpid_list = df_z_for_sale['zpid'].tolist()
 # create empty list
