@@ -42,7 +42,7 @@ z_for_sale_resp = requests.request("GET", url, headers=headers, params=querystri
 z_for_sale_resp_json = z_for_sale_resp.json()
 
 ## to DF
-df_z_for_sale = pd.json_normalize(data=z_for_sale_resp_json['props'])
+df_z_for_sale = pd.json_normalize(data=z_for_sale_resp_json)
 # get zpids to a list
 zpid_list = df_z_for_sale['zpid'].tolist()
 # create empty list
