@@ -7,8 +7,8 @@ import json
 st.write('Welcome to the Zillow API Searcher')
 pd.set_option('display.max_columns', None)
 #Input parameters
-rapid_api_key = st.text_input('Enter your API Key')
 status_type = st.selectbox('Status:',('ForSale','ForRent','RecentlySold'))
+rapid_api_key = st.text_input('Enter your API Key')
 home_type  = st.selectbox('HomeType:',('LotsLand','Multi-family','Apartments','Houses','Manufactured','Condos','Townhomes'))
 city = st.text_input('Enter the desired city', 'santa cruz')
 state = st.text_input('Enter the desired state', 'ca')
